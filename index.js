@@ -61,7 +61,7 @@ app.post('/find',urlencodedParser, (req, res)=> {
 })
 
 app.get('/add' , (req, res) =>{
-    res.render('Add');
+    res.render('add');
 })
 
 app.post('/add', urlencodedParser, (req, res) => {
