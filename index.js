@@ -67,6 +67,7 @@ app.post('/add', urlencodedParser, (req, res) => {
     var data = req.body;
     if(!data.name || !data.bday){
         res.status(500).json({error : 'all the fields are required'})
+        return ;
     }
     
         db.collection('ecell').insertOne({"name" : data.name, "bday" : data.bday}).then(()=>{
