@@ -63,20 +63,39 @@ app.post('/find',urlencodedParser, (req, res)=> {
 app.get('/add' , (req, res) =>{
     res.render('add');
 })
+// app.post('/add', urlencodedParser, (req, res) => {
+//     var data = req.body;
+//     if(!data.name || !data.bday){
+//         res.status(500).json({error : 'all the fields are required'})
+//         return ;
+//     }
+    
+//         db.collection('ecell').insertOne({"name" : data.name, "bday" : data.bday}).then(()=>{
+//             res.render('success')
+//         }).catch(err => {
+//             res.render('failed');
+//         })
+    
+// } )
 app.post('/add', urlencodedParser, (req, res) => {
     var data = req.body;
-    if(!data.name || !data.bday){
-        res.status(500).json({error : 'all the fields are required'})
-        return ;
+    console.log('Received data:', data);
+    
+    if (!data.name || !data.bday) {
+        res.status(500).json({ error: 'All fields are required' });
+        return;
     }
-    
-        db.collection('ecell').insertOne({"name" : data.name, "bday" : data.bday}).then(()=>{
-            res.render('success')
-        }).catch(err => {
-            res.render('failed');
+
+    db.collection('ecell').insertOne({ "name": data.name, "bday": data.bday })
+        .then(() => {
+            res.render('success');
         })
-    
-} )
+        .catch(err => {
+            console.log('Error inserting data:', err); 
+            res.render('failed');
+        });
+});
+
 
 app.get('/delete' , (req, res) =>{
     res.render('delete');
