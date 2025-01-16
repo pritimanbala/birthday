@@ -61,22 +61,9 @@ app.post('/find',urlencodedParser, (req, res)=> {
 })
 
 app.get('/add' , (req, res) =>{
-    res.render('add');
+    res.render('Add');
 })
-// app.post('/add', urlencodedParser, (req, res) => {
-//     var data = req.body;
-//     if(!data.name || !data.bday){
-//         res.status(500).json({error : 'all the fields are required'})
-//         return ;
-//     }
-    
-//         db.collection('ecell').insertOne({"name" : data.name, "bday" : data.bday}).then(()=>{
-//             res.render('success')
-//         }).catch(err => {
-//             res.render('failed');
-//         })
-    
-// } )
+
 app.post('/add', urlencodedParser, (req, res) => {
     var data = req.body;
     console.log('Received data:', data);
