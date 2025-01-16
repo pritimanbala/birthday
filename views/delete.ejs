@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>Delete your friend's birthday</h2>
+            <form action="/delete?_method=DELETE" method="post">
+                <div class="form">
+
+                    <label for="nameBox">Name</label>
+                    <input type="text" id="nameBox" name="name">
+                </div>
+                <div class="form">
+
+                    <label for="bday">Birthday</label>
+                    <input type="text" id="bday" name="bday" placeholder="Eg - 12-07">
+                </div>
+                <input type="submit" value="Delete Birthday">
+            </form>
+            <%- include('navbar')%>
+        </div>
+    </div>
+</body>
+</html>

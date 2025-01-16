@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday</title>
+</head>
+<body>
+    <div class="container">
+        <link rel="stylesheet" href="/css/style.css">
+        <div class="content">
+            <h2>Find your friend's birthday</h2>
+            <form action="/find" method="post">
+                <div class="form">
+
+                    <label for="nameBox">Name</label>
+                    <input type="text" id="nameBox" name="name">
+                </div>
+                <input type="submit" value="Find Birthday">
+            </form>
+            <%- include('navbar')%>
+        </div>
+    </div>
+</body>
+</html>
