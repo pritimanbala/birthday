@@ -15,9 +15,10 @@ app.use(methodOverride('_method'));
 connectDb((err) => {
     
     if(!err){
-        app.listen(3000, ()=> {
-            console.log('amra port 3000 te sunchi');
-        })
+        const PORT = process.env.PORT || 3000; 
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
         db = getDb()
     }   
 })
